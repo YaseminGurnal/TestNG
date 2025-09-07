@@ -35,7 +35,6 @@ public class _06_LoginTest extends BaseDriver {
         Assert.assertTrue(driver.getTitle().equals("My Account"),"Login olunamadı.");
         Tools.Bekle(2);
 
-          driver.quit();
     }
 
 }
