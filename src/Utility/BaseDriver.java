@@ -44,7 +44,7 @@ public class BaseDriver {
         driver.get("https://opencart.abstracta.us/index.php?route=account/login");
         Tools.Bekle(3);
 
-        WebElement email= driver.findElement(By.id("input-email"));
+        WebElement email= driver.findElement(By.xpath("(//input[@type='text'])[2]"));
         email.sendKeys("gizem@gmail.com");
         Tools.Bekle(2);
 

@@ -1,8 +1,10 @@
 package Gun01;
 
 import Utility.BaseDriver;
+import Utility.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _08_SubscribeNewsLetter extends BaseDriver {
@@ -13,12 +15,64 @@ public class _08_SubscribeNewsLetter extends BaseDriver {
   3- Ayrı bir test ile Newsletter  Subscribe işlemini abonelikten çıkınız(NO)
   4- Ayrı bir test ile Newsletter  Subscribe durumunu kontrol ediniz YES ise NO, NO ise YES yapınız.
  */
-     @Test
-    public  void  Test1(){
+    By link = (By.xpath("(//a[text()='Newsletter'])[1]"));
+    By subYes = (By.xpath("(//input[@type='radio'])[1]"));
+    By cntBtn = By.xpath("(//input[@type='submit'])[1]");
+    By subNo = (By.xpath("(//input[@type='radio'])[2]"));
 
-         WebElement newsLetterLink= driver.findElement(By.xpath("(//a[text()='Newsletter'])[1]"));
-         newsLetterLink.click();
+    @Test(priority = 1)
+    public void SubscribeFunctionYes() {
+
+        WebElement newsLetterLink = driver.findElement(link);
+        newsLetterLink.click();
+
+        WebElement subscribeYes = driver.findElement(subYes);
+        subscribeYes.click();
+
+        WebElement continueButton = driver.findElement(cntBtn);
+        continueButton.click();
+
+        Tools.successMessageValidation();
+
+    }
+
+    @Test(priority = 2)
+    public void SubscribeFunctionNo() {
+
+        WebElement newsLetterLink = driver.findElement(link);
+        newsLetterLink.click();
+
+        WebElement subscribeNo = driver.findElement(subNo);
+        subscribeNo.click();
+
+        WebElement continueButton = driver.findElement(cntBtn);
+        continueButton.click();
+
+        Tools.successMessageValidation();
 
 
-     }
+    }
+
+    @Test(priority = 3)
+    public void SubscribeFunctionForBoth() {
+
+        WebElement newsLetterLink = driver.findElement(link);
+        newsLetterLink.click();
+
+        WebElement subscribeYes = driver.findElement(subYes);
+        WebElement subscribeNo = driver.findElement(subNo);
+
+        if (subscribeYes.isSelected())
+            subscribeNo.click();
+        else
+            subscribeYes.click();
+
+        WebElement continueButton = driver.findElement(cntBtn);
+        continueButton.click();
+
+        Tools.successMessageValidation();
+
+
+    }
+
 }
