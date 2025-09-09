@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class _02_AddressFunctionality extends BaseDriver {
     /*
        Senaryo;
@@ -60,17 +62,42 @@ public class _02_AddressFunctionality extends BaseDriver {
         Tools.successMessageValidation();
     }
 
-    @Test
+    @Test(dependsOnMethods = {"AddAdress"})
     public void EditAdress(){
 
+        WebElement addressBook= driver.findElement(By.linkText("Address Book"));
+        addressBook.click();
 
+        List<WebElement>editAll=driver.findElements(By.linkText("Edit"));//Bütün editler
+        WebElement sonEdit=editAll.get(editAll.size()-1); //En sondaki edit butonu
+        sonEdit.click();
 
-    }
+        WebElement firstName=driver.findElement(By.id("input-firstname"));
+        firstName.clear();
+        firstName.sendKeys("Yasemin7");
 
-    @Test
+        WebElement lastName=driver.findElement(By.id("input-lastname"));
+        lastName.clear();
+        lastName.sendKeys("Gurnal7");
+
+        WebElement continueButton=driver.findElement(By.xpath("//input[@type='submit']"));
+        continueButton.click();
+
+        Tools.successMessageValidation();
+
+           }
+
+    @Test(dependsOnMethods = {"EditAdress"})
     public void DeleteAdress(){
 
+        WebElement addressBook= driver.findElement(By.linkText("Address Book"));
+        addressBook.click();
 
+        List<WebElement>deleteAll=driver.findElements(By.linkText("Edit"));//Bütün delete
+        WebElement sonDelete=deleteAll.get(deleteAll.size()-1); //En sondaki delete butonu
+        sonDelete.click();
+        Tools.successMessageValidation();
 
     }
-}
+    }
+
