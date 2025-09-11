@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Suite">
+    <test name="My Test 1">
+        <parameter name="Mesaj" value="Merhaba Testing Dünyası :) 2 "></parameter>
+        <classes>
+            <class name="Gun04._01_ContactUsParameter"> </class>
+        </classes>
+    </test>
+    <test name="My Test 2">
+        <parameter name="Mesaj" value="TestNG nin en önemli özelliği XML file dır. "></parameter>
+        <classes>
+            <class name="Gun04._01_ContactUsParameter"> </class>
+        </classes>
+    </test>
+
+</suite>
