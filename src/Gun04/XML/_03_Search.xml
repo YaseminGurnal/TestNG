@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Suite">
+    <test name="My Test 1">
+        <parameter name="Search Text" value="mac"></parameter>
+        <classes>
+            <class name="Gun04._03_SearchFuncionality"> </class>
+        </classes>
+    </test>
+    <test name="My Test 2">
+        <parameter name="Search Text" value="samsung "></parameter>
+        <classes>
+            <class name="Gun04._03_SearchFuncionality"> </class>
+        </classes>
+    </test>
+
+</suite>
