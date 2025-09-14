@@ -15,7 +15,6 @@ public class _01_ContactUsParameter extends BaseDriver {
 
         WebElement contactUsBtn= driver.findElement(By.linkText("Contact Us"));
         contactUsBtn.click();
-
         WebElement mesajKutusu= driver.findElement(By.id("input-enquiry"));
         mesajKutusu.sendKeys(gelenMesaj);
 
