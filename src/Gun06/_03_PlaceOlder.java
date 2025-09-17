@@ -24,7 +24,7 @@ public class _03_PlaceOlder extends BaseDriver {
 */
 
     @Test
-    public void ProceddToCheckout() {
+    public void ProceedToCheckout() {
 
         WebElement searchInput = driver.findElement(By.name("search"));
         searchInput.sendKeys("ipod" + Keys.ENTER);
@@ -59,7 +59,7 @@ public class _03_PlaceOlder extends BaseDriver {
         wait.until(ExpectedConditions.urlContains("success"));
 
         WebElement text = driver.findElement(By.xpath("//div[@id='content']/h1"));
-        Assert.assertEquals(text.getText(),"Your order has been placed!","Oluşan mesajlar eşleşmiyor.");
+        Assert.assertEquals(text.getText(),"Your order has been placed!","Oluşan mesajla eşleşmiyor.");
 
 
     }

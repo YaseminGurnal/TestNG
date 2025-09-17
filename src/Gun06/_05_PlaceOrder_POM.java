@@ -28,7 +28,7 @@ public class _05_PlaceOrder_POM extends BaseDriver {
         elements.confirmOrder.click();
 
         wait.until(ExpectedConditions.urlContains("success"));
-        Assert.assertEquals(elements.text.getText(),"Your order has been placed!","Oluşan mesajlar eşleşmiyor.");
+        Assert.assertEquals(elements.text.getText(),"Your order has been placed!","Oluşan mesajla eşleşmiyor.");
 
 
 
