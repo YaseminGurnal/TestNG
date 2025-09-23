@@ -17,7 +17,7 @@ public class _04_PlaceOrder_Elementleri {
     @FindBy(xpath = "//span[text()='Add to Cart'])[1]")
     public WebElement addToCard;
 
-    @FindBy(linkText = "Shopping cart")
+    @FindBy(xpath ="//a[text()='shopping cart']")
     public WebElement shoppingCardLink;
 
     @FindBy(linkText = "Checkout")

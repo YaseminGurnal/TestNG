@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class _01_Elements {
+    public List<WebElement> productListBasket;
+
     public _01_Elements() {
         PageFactory.initElements(BaseDriver.driver, this);
     }

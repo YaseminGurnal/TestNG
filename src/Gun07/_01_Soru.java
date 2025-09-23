@@ -22,6 +22,7 @@ public class _01_Soru extends BaseDriver {
  */
     @Test
     public void addToCard() {
+
         _04_PlaceOrder_Elementleri poe = new _04_PlaceOrder_Elementleri();
         _01_Elements sre = new _01_Elements();
         poe.searchInput.sendKeys("ıpod" + Keys.ENTER);
@@ -41,11 +42,15 @@ public class _01_Soru extends BaseDriver {
             if (urun.getText().equals(tıklatılacakÜrününAdı)) {
                 urunBulundu = true;
                 break;
-            }
-        }
-        Assert.assertTrue(urunBulundu, "Aradığınız ürün sepette bulunamadı.");
-        poe.shoppingCardLink.click();
 
+
+            }
+
+        }
+
+        String tiklatilacakUrununAdi = "";
+        urunBulundu = Tools.listContainsString(sre.productListBasket, tiklatilacakUrununAdi);
+        Assert.assertTrue(urunBulundu, "Eklediğiniz sepette bulunamadı");
 
     }
 }
